@@ -45,6 +45,7 @@ INSERT INTO pacientes (nome,sexo,obito) VALUES ("Donald Knuth","m",false);
 INSERT INTO pacientes (nome,sexo,obito) VALUES ("Grace Hopper","f",false);
 INSERT INTO pacientes (nome,sexo,obito) VALUES ("Dennis Ritchie","m",false);
 
+INSERT INTO consultas (especialidade_id,pac_id,profiss_id) values (1,1,1);
 
 
 ALTER TABLE consultas ADD COLUMN last_user_updated varchar(100);
