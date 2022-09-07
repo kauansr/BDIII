@@ -50,7 +50,7 @@ INSERT INTO pacientes (nome,sexo,obito) VALUES ("Dennis Ritchie","m",false);
 ALTER TABLE consultas ADD COLUMN last_user_updated varchar(100);
 ALTER TABLE consultas ADD COLUMN last_time_updated timestamp;
 
-CREATE OR REPLACE FUNCTION trgValidaDadosConsulta() returns trigger as $trgValidaDadosConsulta$;
+CREATE OR REPLACE FUNCTION trgValidaDadosConsulta() returns trigger as $trgValidaDadosConsulta$
 
 declare
 pac_row record;
@@ -87,4 +87,9 @@ $trgValidaDadosConsulta$ LANGUAGE plpgsql;
 create TRIGGER trgValidaDadosConsulta
 BEFORE INSERT OR UPDATE ON consultas
 FOR EACH ROW 
-EXECUTE PROCEDURE trgValidaDadosConsulta();
+EXECUTE PROCEDURE ValidaDadosConsulta();
+
+SELECT * FROM pacientes;
+SELECT * FROM especialidades;
+SELECT * FROM consultas;
+SELECT * FROM profissionais;
