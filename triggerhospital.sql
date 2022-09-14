@@ -60,7 +60,7 @@ espec_row record;
 
 begin
   
-	RAISE NOTICE 'Especialdide_id nao informada.';
+	RAISE NOTICE 'TRIGGER FOI ACIONADA.';
 	
 	RETURN NEW;
 END;
